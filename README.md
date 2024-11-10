@@ -15,27 +15,23 @@ sudo chmod a+rw /dev/ttyUSB0
 ```
 
 ## Build Dynamixel SDK
-Build the dynamixel_sdk libraries to use methods to read and write inside the motors registers:
+Build the `dynamixel_sdk` libraries to use methods for reading and writing to the motor registers.
+
+- **dynamixel_sdk**: Build the libraries to use methods for reading and writing to the motor registers.
+- **Dynamixel Custom Interface**: This library generates custom messages and services that will be used by the `read_write` node.
 
 ```
-colcon build --packages-select dynamixel_sdk 
-```
-## Build the Dynamixel Custom interface
-This library generate custom messages and service that will be used by the read_write node
-
-```
-colcon build --packages-select dynamixel_sdk_custom_interfaces
-```
-## Build the Dynamixel example
-```
-colcon build --packages-select dynamixel_sdk_examples
+colcon build --packages-select dynamixel_sdk dynamixel_sdk_custom_interfaces dynamixel_sdk_examples
 ```
 
 ## Run arm_description, necessary to build the KDL chain
 ```
 ros2 launch arm_description display.launch.py
 ```
-
+## Run dynamixel_sdk_examples, the subscriber that accepts commands to the dynamixel
+```
+ros2 run dynamixel_sdk_examples read_write_node
+```
 
 ## Run kdl_arm_dynamixel
 ```
