@@ -1,4 +1,19 @@
- 
+## Enable acces to the USB port
+
+Ensure you add the `--privileged` flag to the Docker run command to grant the container additional privileges, such as access to hardware resources.
+
+Add your current user to the dialout group
+```
+sudo usermod -aG dialout <username>
+```
+This grants your user access to serial devices (e.g., `/dev/ttyUSB0`)
+
+Then, enable access to the port
+
+```
+sudo chmod a+rw /dev/ttyUSB0
+```
+
 ## Build Dynamixel SDK
 Build the dynamixel_sdk libraries to use methods to read and write inside the motors registers:
 
