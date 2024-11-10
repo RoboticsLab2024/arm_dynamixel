@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(kdl_tutorial_01)
+project(kdl_arm_dynamixel)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -57,11 +57,6 @@ install(TARGETS
   main_rviz
   DESTINATION lib/${PROJECT_NAME}
 )
-
-install(
-  DIRECTORY
-    urdf
-  DESTINATION share/${PROJECT_NAME}
-)
+ 
 
 ament_package()
