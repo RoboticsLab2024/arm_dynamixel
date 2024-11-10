@@ -18,7 +18,7 @@ sudo chmod a+rw /dev/ttyUSB0
 Build the `dynamixel_sdk` libraries to use methods for reading and writing to the motor registers.
 
 - **dynamixel_sdk**: Build the libraries to use methods for reading and writing to the motor registers.
-- **Dynamixel Custom Interface**: This library generates custom messages and services that will be used by the `read_write` node.
+- **dynamixel_sdk_custom_interfaces**: This library generates custom messages and services that will be used by the `read_write` node.
 
 ```
 colcon build --packages-select dynamixel_sdk dynamixel_sdk_custom_interfaces dynamixel_sdk_examples
